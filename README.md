@@ -17,6 +17,7 @@ Modular A.I.M. (Actual Intelligent Memory) repositories. While the original arch
 - **[aim-google](https://github.com/BrianV1981/aim-google)** — Google Workspace CLI (Gmail, Drive, Calendar, …).
 - **[aim-flight-recorder](https://github.com/BrianV1981/aim-flight-recorder)** — Forensic Markdown session extractor.
 - **[aim-boardroom](https://github.com/BrianV1981/aim-boardroom)** — Multi-agent orchestration room (OS multiplexing + artifacts).
+- **[aim-calendar](https://github.com/BrianV1981/aim-calendar)** *(WIP)* — Local-first chronological communications exocortex & multimodal RAG calendar (SMS, MMS, call transcripts).
 
 **DNA, comms & lore:**
 - **[aim-coagents](https://github.com/BrianV1981/aim-coagents)** — DNA bank for sovereign co-agent blueprints.
@@ -24,13 +25,13 @@ Modular A.I.M. (Actual Intelligent Memory) repositories. While the original arch
 - **[aim-chalkboard](https://github.com/BrianV1981/aim-chalkboard)** — Optional cross-host async git mailbox (PoC; default same-host comms = aim-communicate skill).
 
 **Deprecated / not maintained:**
-- **aim-agy** — Legacy Core engine (Antigravity CLI). Deprecated in favor of aim-joshua.
-- **aim-grok** — Legacy Grok CLI vessel. Deprecated in favor of aim-joshua.
-- **aim-opencode** — Legacy OpenCode CLI vessel. Deprecated in favor of aim-joshua.
-- **aim-codex** — Legacy OpenAI Codex CLI vessel. Deprecated in favor of aim-joshua.
-- **aim-claude / Anthropic-line vessels** — Done. Operator does not develop against Anthropic. Deprecated in favor of aim-joshua.
-- **aim-skills** — Deprecated private repository. Replaced by `aim-skill-library`.
-- **aim** — Original Gemini CLI framework. Deprecated after loss of practical subscription access.
-- **aim-swarm** — Legacy Python swarm factory.
+- **[aim-agy](https://github.com/BrianV1981/aim-agy)** — Legacy Core engine (Antigravity CLI). Deprecated in favor of aim-joshua.
+- **[aim-grok](https://github.com/BrianV1981/aim-grok)** — Legacy Grok CLI vessel. Deprecated in favor of aim-joshua.
+- **[aim-opencode](https://github.com/BrianV1981/aim-opencode)** — Legacy OpenCode CLI vessel. Deprecated in favor of aim-joshua.
+- **[aim-codex](https://github.com/BrianV1981/aim-codex)** — Legacy OpenAI Codex CLI vessel. Deprecated in favor of aim-joshua.
+- **[aim-claude](https://github.com/BrianV1981/aim-claude)** / Anthropic-line vessels — Done. Operator does not develop against Anthropic. Deprecated in favor of aim-joshua.
+- **[aim-skills](https://github.com/BrianV1981/aim-skills)** — Deprecated private repository. Replaced by `aim-skill-library`.
+- **[aim](https://github.com/BrianV1981/aim)** — Original Gemini CLI framework. Deprecated after loss of practical subscription access.
+- **[aim-swarm](https://github.com/BrianV1981/aim-swarm)** — Legacy Python swarm factory.
 
 Full map: see **aim-skill-library** `docs/AIM_ECOSYSTEM_MAP.md` or Operator artifact `AIM_ECOSYSTEM_MAP.md`.
