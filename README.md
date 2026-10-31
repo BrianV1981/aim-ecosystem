@@ -12,6 +12,7 @@ Modular A.I.M. (Actual Intelligent Memory) repositories. While the original arch
 **Tools & workspaces:**
 - **[aim-tmux-dashboard](https://github.com/BrianV1981/aim-tmux-dashboard)** — Terminal multi-session monitor and daily cockpit (CLI alias: `aim-dash`).
 - **[aim-connect](https://github.com/BrianV1981/aim-connect)** — Self-hosted remote workspace web UI.
+- **[aim-office](https://github.com/BrianV1981/aim-office)** — Isometric 2.5D pixel-art multi-agent fleet command center and visualizer.
 - **[aim-skill-library](https://github.com/BrianV1981/aim-skill-library)** — Skills index / multi-CLI install registry. Home of the sleeper powerhouse: **`aim-communicate`**.
 - **[aim-browser](https://github.com/BrianV1981/aim-browser)** — Headed Chromium CDP engine + browser skill suite.
 - **[aim-google](https://github.com/BrianV1981/aim-google)** — Google Workspace CLI (Gmail, Drive, Calendar, …).
