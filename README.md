@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/Core_Stack-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Flagship Cockpit: AIM-Connect](https://img.shields.io/badge/%231_Daily_Driver-AIM--Connect_v1.8-00d4ff.svg)](https://github.com/BrianV1981/aim-connect)
-[![Agent OS: J.O.S.H.U.A.](https://img.shields.io/badge/Agent_OS-J.O.S.H.U.A._v1.1.3-10b981.svg)](https://github.com/BrianV1981/aim-joshua)
+[![Agent Exoskeleton: J.O.S.H.U.A.](https://img.shields.io/badge/Exoskeleton_OS-J.O.S.H.U.A._v1.1.3-10b981.svg)](https://github.com/BrianV1981/aim-joshua)
 
 **A.I.M. (*Actual Intelligent Memory*)** is a self-hosted, open-source software ecosystem for running, supervising, and auditing long-horizon AI coding agents on your own hardware—from any browser or phone—without SaaS seat fees, vendor lock-in, or context-compression amnesia.
 
@@ -31,11 +31,27 @@ flowchart TD
     Connect -->|"Live PTY + Fleet Control + Context-Bloat Telemetry"| Tmux["🖥️ Host Linux / WSL tmux Fleet"]
     Dash["⌨️ aim-tmux-dashboard / aim-cron-dashboard"] --> Tmux
     Office["🏢 aim-office (2.5D Pixel Visualizer - Beta)"] -.->|"Read-Only Telemetry"| Connect
-    Tmux --> Joshua["🧬 aim-joshua (CLI-Agnostic Agent OS)"]
+    Tmux --> Joshua["🧬 aim-joshua (Repo Exoskeleton & SOPs)"]
+    Joshua --> Harnesses["⚡ Host Harnesses Inside It (Grok · Antigravity · OpenCode · Codex · Claude · Ollama)"]
     Joshua --> Skills["🧰 aim-skill-library + aim-coagents (Roles & Procedures)"]
     Joshua --> Memory["🧠 Local LanceDB + memory-wiki/ + aim-memory (RAG 5.21)"]
     Joshua --> Tools["🌐 aim-browser · aim-google · aim-flight-recorder · aim-calendar"]
 ```
+
+### 🤖 The Combined Endgame: A Self-Hosted, Model-Agnostic "Grok Bot"
+
+When you wire **[aim-connect](https://github.com/BrianV1981/aim-connect)** + **[aim-joshua](https://github.com/BrianV1981/aim-joshua)** (+ `aim-coagents`, `aim-cron-dashboard`, and `aim-browser`) together on your own Linux/WSL machine, you end up with a **100% self-hosted, model-agnostic equivalent to xAI's Grok Bot** (and a developer-grade evolution of **OpenClaw**): persistent named AI teammates living 24/7 on a dedicated computer with their own terminal, filesystem, real headed browser, scheduled routines, persistent memory, spoken `🔊` mobile briefings, and `✋ Waiting` chimes when they need human approval.
+
+> [!WARNING]
+> **Honest Trade-Off (Steep DIY Curve vs. Total Ownership):** Unlike a 1-click paid subscription like Grok Bot, assembling `aim-connect` + `aim-joshua` + `tmux` + CLI skills has a **steep installation and Linux learning curve**. What you get in return is zero monthly microVM rent, full bare-metal control, and complete **model independence**—run frontier CLIs (`Grok`, `Antigravity`, `Codex`, `Claude Code`) today, or run **100% locally offline** with `OpenCode` + local `Ollama` / `vLLM` models, local `nomic-embed-text` embeddings, and local `piper-tts` ONNX voices.
+
+| Dimension | **`aim-connect` + `aim-joshua` Stack** (`MIT`) | **xAI Grok Bot** (Managed Cloud) | **OpenClaw / Clawdbot** (Self-Hosted Bot) |
+| :--- | :--- | :--- | :--- |
+| **Setup & Learning Curve** | **Steep DIY** (Linux/WSL + `tmux` + multi-repo wiring) | **1-Click Turnkey** (Managed cloud microVMs) | **Moderate DIY** (Node/Docker + chat-app tokens) |
+| **Model & Vendor Lock-In** | **100% Model-Agnostic** (Any CLI, BYOK, or **100% local Ollama**) | **Locked to xAI** (Paid SuperGrok subscription) | Multi-provider BYOK + local Ollama |
+| **Primary Interface** | **Full Browser/Mobile Fleet Cockpit** (Live PTY + Split Monaco IDE + Diffs + `🔊` TTS) | Mobile/Web coworker chat + cloud desktop | Chat apps (Telegram, WhatsApp, Discord, Slack) |
+| **Engineering & Repo Guardrails** | **Built-In** (`git worktree` gates, `<30%` handoffs, encrypted Blackbox, hostile `aim-auditor`) | General cloud computer sandbox | General life-admin & script automation (`SOUL.md`) |
+| **Hardware & Data Residency** | **100% Your Bare Metal / Private Disk (`$0` rent)** | Vendor cloud microVM | Your machine + third-party chat relays |
 
 ---
 
@@ -68,23 +84,30 @@ If you only look at one repository in this ecosystem, start with **[aim-connect]
 
 ---
 
-## 🧬 Core Foundation: [J.O.S.H.U.A. (`aim-joshua`)](https://github.com/BrianV1981/aim-joshua)
+## 🧬 Core Exoskeleton: [J.O.S.H.U.A. (`aim-joshua`)](https://github.com/BrianV1981/aim-joshua)
 
 > **Status:** `🟢 Production (v1.1.3 — Deployed Across 21/21 Local Workspaces)` · **Internal Audit:** `Grade A+ (66/66 pytest, Linux + Windows CI)` · **License:** `MIT`
 
-**[aim-joshua](https://github.com/BrianV1981/aim-joshua)** (*Joint Operational Systems for Heuristic User Automation*) is the CLI-agnostic "Operating Procedure System" that sits quietly inside any git repository (`joshua_os/` + `./aim` — automatically `.gitignore`-shielded so it never pollutes your project's commits). Instead of acting as yet another LLM chat loop, it gives *any* CLI or desktop IDE agent persistent local memory, GitOps guardrails, and session continuity:
+**[aim-joshua](https://github.com/BrianV1981/aim-joshua)** (*Joint Operational Systems for Heuristic User Automation*) is a lightweight, repo-level **agentic exoskeleton** (`joshua_os/` + `./aim` + `AGENTS.md` — automatically `.gitignore`-shielded so it never pollutes your project's commits).
 
-- **Two-Tier Local Hybrid Memory (`mcp_lancedb.py` + `./aim search`):** Exposes workspace-scoped LanceDB vector + lexical recall natively over MCP (for desktop IDEs on Windows 10/11, macOS, and Linux) with an automatic CLI fallback (`0.5s` offline fallback if local Ollama isn't running).
-- **Conscious GitOps Memory (`memory-wiki/` + `.parquet` Datajacks):** Replaces hallucinatory background summarizers with agent-curated Markdown wikis and portable Apache Arrow `.parquet` knowledge cartridges (`bake`, `jack-in`, `unplug`).
-- **Worktree Isolation & Forensic Blackbox Vault:** Enforces isolated `aim fix <issue>` worktrees (`workspace/issue-<id>` → `aim promote`) and seals tamper-evident raw session transcripts into an Operator-keyring-encrypted vault (`./aim <vessel>-blackbox`).
+> **Why call a lightweight exoskeleton an "Operating System"?** Yes, that's an intentionally opinionated take—it is obviously not a Linux kernel, and **it does not compete with or replace `Claude Code`, `Cursor`, `Antigravity`, `Grok CLI`, `OpenCode`, or `Codex`**. Those harnesses run *inside* J.O.S.H.U.A. Raw coding agents are powerful brains with terrible operational habits, so J.O.S.H.U.A. acts as an **"Operating Procedure System"**—bolting onto whichever harness or local model you already use to enforce non-negotiable memory, branching, and handoff procedures:
 
-| Capability | **J.O.S.H.U.A. (`aim-joshua`)** | **Claude Code / Cursor** (Proprietary) | **OpenHands / Hosted Harnesses** | **Aider / Single-CLI Loops** |
+- **Two-Tier Local Hybrid Memory (`mcp_lancedb.py` + `./aim search`):** Auto-registers a workspace-scoped LanceDB vector + Tantivy BM25 `search_lancedb` MCP server across your installed CLIs/IDEs (Windows 10/11, macOS, Linux, WSL) with a deterministic `./aim search` CLI fallback (`0.5s` offline fallback when Ollama is asleep).
+- **Conscious GitOps Wiki & Datajack Cartridges (`memory-wiki/` + `.parquet`):** Replaces lossy `/compact` summarizers with agent-curated plain-text Markdown wikis (`memory-wiki/`), structured `<30%`-context `HANDOFF.md` batons, and mountable Apache Arrow `.parquet` knowledge cartridges (`bake`, `jack-in`, `unplug`).
+- **Worktree Isolation, Session Notebook, & Encrypted Blackbox Vault:** Enforces isolated `./aim fix <id>` worktrees (`workspace/issue-<id>` → `./aim promote`), indexes past sessions in a local SQLite `FTS5` notebook (`./aim sessions`), and seals raw transcripts into an at-rest Fernet-encrypted vault (`./aim <vessel>-blackbox`).
+
+### How `aim-joshua` Compares to Other Agent Workflow, SOP & Memory Layers
+
+*(Note: Execution harnesses like Claude Code, Cursor, OpenCode, Grok CLI, and Codex are **hosts** that run inside these layers—not competitors.)*
+
+| Capability | **J.O.S.H.U.A. (`aim-joshua`)** | **BMAD-METHOD / GitHub Spec-Kit / Superpowers** (SOP & Spec Kits) | **Beads (`bd`) / Claude Task Master** (Task & State Trackers) | **Mem0 / Zep / Basic Memory** (Agent Memory Layers) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Pricing & Upsell** | **$0** (`MIT`, zero cloud gateway upsell) | `$20–$200/mo` subscription | Free local Docker / `$20+/mo` Cloud | `$0` (`Apache/MIT`, BYOK) |
-| **Swap Underlying CLI / Model Anytime** | **Yes** (`Antigravity`, `OpenCode`, `Grok`, `Codex` share 1 brain) | **No** (Vendor-locked) | Tied to OpenHands runtime | Tied to single harness loop |
-| **Long-Horizon Memory Strategy** | **Local LanceDB + Git-diffable `memory-wiki/` + `<30%` Baton Pass** | Opaque `/compact` summarization + flat `CLAUDE.md` | Session/container scoped | Repo-map AST (no semantic wiki/vault) |
-| **Anti-Tampering Transcript Proof** | **Yes** (Write-only encrypted Blackbox Vault) | **No** | **No** | **No** |
-| **Non-Invasive Consumer Repo Shield** | **Yes** (Auto-gitignored `joshua_os/` + atomic `./aim update`) | Leaves `.cursor/` / `.claude/` config | Heavy Docker daemon footprint | `.aider*` dotfiles |
+| **Primary Role** | **All-in-one repo exoskeleton** (SOPs + Hybrid RAG + GitOps + Vault) | Spec-driven planning, role prompts, & TDD skill discipline | Git-backed task graphs & cross-session issue state | Standalone vector or Markdown MCP memory servers |
+| **Pricing** | **$0** (`MIT`, 100% local) | **$0** (`MIT` / Open Source) | **$0** (`MIT` / Open Source) | Free local OSS / `$19–$249/mo` managed cloud (`Mem0`/`Zep`) |
+| **Built-In Hybrid Vector + BM25 DB** | **Yes** (Local `LanceDB` + `Tantivy` MCP + `.parquet` cartridges) | **No** (Markdown specs & prompt templates only) | **No** (JSONL / task metadata only) | **Yes** (Core focus, no workflow/GitOps tools) |
+| **Enforced `git worktree` CLI Gates** | **Yes** (`./aim fix` → isolated worktree → `./aim promote`) | Prompt-guided / manual git | Task state in git (no worktree promotion engine) | **No** |
+| **Structured `<30%` Handoff + FTS5 Session Log** | **Yes** (`HANDOFF.md` + `./aim sessions` SQLite `FTS5` + encrypted Blackbox) | Spec/story files (no encrypted transcript vault) | Strong task continuity (no transcript vault) | **No** |
+| **Non-Invasive Consumer `.gitignore` Shield** | **Yes** (`joshua_os/` & `workspace/` auto-shielded; atomic `./aim update`) | Commits `.bmad-core/` or `.specify/` into repo | Commits `.beads/` or `.taskmaster/` into repo | External DB / MCP config only |
 
 ---
 
