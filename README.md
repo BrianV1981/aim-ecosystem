@@ -6,7 +6,7 @@
 [![Flagship Cockpit: AIM-Connect](https://img.shields.io/badge/%231_Daily_Driver-AIM--Connect_v1.8-00d4ff.svg)](https://github.com/BrianV1981/aim-connect)
 [![Agent Exoskeleton: J.O.S.H.U.A.](https://img.shields.io/badge/Exoskeleton_OS-J.O.S.H.U.A._v1.1.3-10b981.svg)](https://github.com/BrianV1981/aim-joshua)
 
-**A.I.M. (*Actual Intelligent Memory*)** is a self-hosted, open-source software ecosystem for running, supervising, and auditing long-horizon AI coding agents on your own hardware—from any browser or phone—without SaaS seat fees, vendor lock-in, or context-compression amnesia.
+**A.I.M. (*Actual Intelligent Memory*)** is a self-hosted, open-source software ecosystem for running, supervising, and auditing long-horizon AI coding agents on your own hardware—from any browser or phone—where **every model and every CLI/IDE harness shares the exact same short-term and long-term project memory (`LanceDB` + `memory-wiki/` + `HANDOFF.md`)** with zero SaaS seat fees or vendor lock-in.
 
 > [!IMPORTANT]
 > **Radical Product-Truth Policy (Work in Progress):** This ecosystem is built in the trenches by a working operator to run real daily businesses—not by a VC-funded marketing team. Every repository below carries its **actual build maturity and internal `aim-auditor` grade**. Some tools are battle-tested daily drivers (`aim-connect`, `aim-joshua`), some are active betas or partial phases (`aim-office`, `aim-calendar`), and some are unbuilt architectural specs (`aim-boardroom`, `0` lines of code). Nothing here pretends to be finished when it isn't.
@@ -19,10 +19,12 @@ Most AI developer tools make the same three mistakes: they lock your workflow in
 
 A.I.M. was built from five opposite first principles:
 
-1. **Clientless Sovereignty Over Rented Cloud Seats:** You shouldn't need a `$40/month` cloud IDE, a proprietary desktop app, or private SSH keys stored on a borrowed iPad to control your own Linux server. With **[aim-connect](https://github.com/BrianV1981/aim-connect)**, any mobile or desktop browser becomes a 3FA/WebAuthn-secured root cockpit for your entire `tmux` agent fleet.
-2. **The 30% Context Rule (Handoffs Over "Compression"):** A 1M–2M token context window is a trap—past ~30% capacity, attention weights dilute, token burn compounds every turn, and running `/compact` destroys exact variable and architectural recall. Instead of compressing bloated sessions, A.I.M. tracks context bloat visually, curates conscious plain-text Markdown wikis (`memory-wiki/`), and passes tight `HANDOFF.md` batons to fresh `<10%`-context sessions.
-3. **Zero-Token Determinism ("Python for Autonomic Work, LLMs for Reasoning"):** An LLM should never do a job that deterministic Python, SQLite `FTS5`, or `git` can do for `$0` in `5ms`. Transcript parsing (`aim-flight-recorder`), local hybrid vector+BM25 recall (`aim-memory` / `mcp_lancedb.py`), and `git worktree` sandboxing happen outside the prompt window—zero background API burn, zero summarizer hallucinations.
-4. **Harness Independence (Surviving Vendor Rug-Pulls):** After watching vendors restrict CLI access overnight and spike API pricing without warning, A.I.M. consolidated four separate CLI forks into **[aim-joshua](https://github.com/BrianV1981/aim-joshua)**—a harness-agnostic "Operating Procedure System" that wraps *whichever* CLI or IDE is best today (`Antigravity`, `OpenCode`, `Grok`, `Codex`) behind one shared memory, skill, and GitOps layer.
+1. **The #1 Separator — Any Model, Any Harness, One Shared Short-Term & Long-Term Project Brain:** Normally, every AI tool traps your history in its own silo (`~/.gemini/`, `~/.grok/`, `~/.codex/`, `.cursor/`). Switch harnesses or hit a quota wall mid-feature and your next agent wakes up with total amnesia. **[aim-joshua](https://github.com/BrianV1981/aim-joshua)** breaks those silos completely by binding every harness (`Antigravity`, `Grok CLI`, `OpenCode`, `Codex`, `Claude Code`, `Cursor`, or local `Ollama` models) to the **exact same two-tier project memory**:
+   - **Shared Short-Term Memory (`HANDOFF.md` + `./aim sessions` SQLite `FTS5`):** Scope a feature in Antigravity at 10:00 AM, seal a structured handoff, and wake up Grok CLI, Codex, or local OpenCode at 10:01 AM with the exact tactical state and searchable session log intact.
+   - **Shared Long-Term Memory (`memory_lance/` LanceDB + `memory-wiki/`):** Every installed CLI and IDE auto-connects to the **same local LanceDB hybrid vector + BM25 database** (`search_lancedb` MCP + `./aim search` fallback). What Gemini learns on Monday, Grok, GPT, Claude, or a local Ollama model recalls in milliseconds on Tuesday.
+2. **Clientless Sovereignty Over Rented Cloud Seats:** You shouldn't need a `$40/month` cloud IDE, a proprietary desktop app, or private SSH keys stored on a borrowed iPad to control your own Linux server. With **[aim-connect](https://github.com/BrianV1981/aim-connect)**, any mobile or desktop browser becomes a 3FA/WebAuthn-secured root cockpit for your entire `tmux` agent fleet.
+3. **The 30% Context Rule (Handoffs Over "Compression"):** A 1M–2M token context window is a trap—past ~30% capacity, attention weights dilute, token burn compounds every turn, and running `/compact` destroys exact variable and architectural recall. Instead of compressing bloated sessions, A.I.M. tracks context bloat visually, curates conscious plain-text Markdown wikis (`memory-wiki/`), and passes tight `HANDOFF.md` batons to fresh `<10%`-context sessions.
+4. **Zero-Token Determinism ("Python for Autonomic Work, LLMs for Reasoning"):** An LLM should never do a job that deterministic Python, SQLite `FTS5`, or `git` can do for `$0` in `5ms`. Transcript parsing (`aim-flight-recorder`), local hybrid vector+BM25 recall (`aim-memory` / `mcp_lancedb.py`), and `git worktree` sandboxing happen outside the prompt window—zero background API burn, zero summarizer hallucinations.
 5. **Adversarial Verification Over Agent "Trust Me" Claims:** Autonomous agents routinely claim tests pass when they haven't run them. A.I.M. seals raw session transcripts into an Operator-only encrypted **Blackbox Vault** and pairs builder agents with a separate hostile **`aim-auditor`** peer (`aim-coagents` + `aim-skill-library`) that grades repositories empirically (`F` → `A+`) before work is accepted.
 
 ```mermaid
@@ -31,11 +33,11 @@ flowchart TD
     Connect -->|"Live PTY + Fleet Control + Context-Bloat Telemetry"| Tmux["🖥️ Host Linux / WSL tmux Fleet"]
     Dash["⌨️ aim-tmux-dashboard / aim-cron-dashboard"] --> Tmux
     Office["🏢 aim-office (2.5D Pixel Visualizer - Beta)"] -.->|"Read-Only Telemetry"| Connect
-    Tmux --> Joshua["🧬 aim-joshua (Repo Exoskeleton & SOPs)"]
-    Joshua --> Harnesses["⚡ Host Harnesses Inside It (Grok · Antigravity · OpenCode · Codex · Claude · Ollama)"]
-    Joshua --> Skills["🧰 aim-skill-library + aim-coagents (Roles & Procedures)"]
-    Joshua --> Memory["🧠 Local LanceDB + memory-wiki/ + aim-memory (RAG 5.21)"]
-    Joshua --> Tools["🌐 aim-browser · aim-google · aim-flight-recorder · aim-calendar"]
+    Tmux --> Harnesses["⚡ Swap Any Harness / Model Anytime (Grok · Antigravity · OpenCode · Codex · Claude · Local Ollama)"]
+    Harnesses --> Joshua["🧬 aim-joshua (Shared Repo Exoskeleton & SOPs)"]
+    Joshua --> ShortTerm["⚡ Shared Short-Term Memory (HANDOFF.md + SQLite FTS5 Sessions)"]
+    Joshua --> LongTerm["🧠 Shared Long-Term Memory (Project LanceDB MCP + memory-wiki/)"]
+    Joshua --> Tools["🧰 aim-skill-library · aim-coagents · aim-browser · aim-google · aim-calendar"]
 ```
 
 ### 🤖 The Combined Endgame: A Self-Hosted, Model-Agnostic "Grok Bot"
@@ -48,7 +50,8 @@ When you wire **[aim-connect](https://github.com/BrianV1981/aim-connect)** + **[
 | Dimension | **`aim-connect` + `aim-joshua` Stack** (`MIT`) | **xAI Grok Bot** (Managed Cloud) | **OpenClaw / Clawdbot** (Self-Hosted Bot) |
 | :--- | :--- | :--- | :--- |
 | **Setup & Learning Curve** | **Steep DIY** (Linux/WSL + `tmux` + multi-repo wiring) | **1-Click Turnkey** (Managed cloud microVMs) | **Moderate DIY** (Node/Docker + chat-app tokens) |
-| **Model & Vendor Lock-In** | **100% Model-Agnostic** (Any CLI, BYOK, or **100% local Ollama**) | **Locked to xAI** (Paid SuperGrok subscription) | Multi-provider BYOK + local Ollama |
+| **Model & Harness Lock-In** | **100% Model & Harness Agnostic** (Swap any CLI, BYOK, or **100% local Ollama** mid-task) | **Locked to xAI** (Paid SuperGrok subscription) | Single OpenClaw harness (BYOK + local Ollama) |
+| **Shared Short-Term + Long-Term Memory** | **Yes — Across Every Harness & Model** (`HANDOFF.md` + `FTS5` short-term + shared local `LanceDB` & `memory-wiki/` long-term) | **Single-vendor cloud memory** (Cannot hand baton to non-xAI CLIs) | Single-agent `SOUL.md` / workspace memory |
 | **Primary Interface** | **Full Browser/Mobile Fleet Cockpit** (Live PTY + Split Monaco IDE + Diffs + `🔊` TTS) | Mobile/Web coworker chat + cloud desktop | Chat apps (Telegram, WhatsApp, Discord, Slack) |
 | **Engineering & Repo Guardrails** | **Built-In** (`git worktree` gates, `<30%` handoffs, encrypted Blackbox, hostile `aim-auditor`) | General cloud computer sandbox | General life-admin & script automation (`SOUL.md`) |
 | **Hardware & Data Residency** | **100% Your Bare Metal / Private Disk (`$0` rent)** | Vendor cloud microVM | Your machine + third-party chat relays |
@@ -104,6 +107,7 @@ If you only look at one repository in this ecosystem, start with **[aim-connect]
 | :--- | :--- | :--- | :--- | :--- |
 | **Primary Role** | **All-in-one repo exoskeleton** (SOPs + Hybrid RAG + GitOps + Vault) | Spec-driven planning, role prompts, & TDD skill discipline | Git-backed task graphs & cross-session issue state | Standalone vector or Markdown MCP memory servers |
 | **Pricing** | **$0** (`MIT`, 100% local) | **$0** (`MIT` / Open Source) | **$0** (`MIT` / Open Source) | Free local OSS / `$19–$249/mo` managed cloud (`Mem0`/`Zep`) |
+| **Cross-Harness Shared Memory (Short + Long Term)** | **Yes** (`Antigravity`, `Grok`, `OpenCode`, `Codex`, `Claude`, & `Ollama` all share 1 `HANDOFF.md` + `FTS5` log + 1 local `LanceDB`) | Partial (Shared Markdown specs, no shared vector/BM25 DB or FTS5 session log) | Partial (Shared task graph, no shared long-term semantic RAG) | Long-term recall only (No structured short-term baton handoff or SOPs) |
 | **Built-In Hybrid Vector + BM25 DB** | **Yes** (Local `LanceDB` + `Tantivy` MCP + `.parquet` cartridges) | **No** (Markdown specs & prompt templates only) | **No** (JSONL / task metadata only) | **Yes** (Core focus, no workflow/GitOps tools) |
 | **Enforced `git worktree` CLI Gates** | **Yes** (`./aim fix` → isolated worktree → `./aim promote`) | Prompt-guided / manual git | Task state in git (no worktree promotion engine) | **No** |
 | **Structured `<30%` Handoff + FTS5 Session Log** | **Yes** (`HANDOFF.md` + `./aim sessions` SQLite `FTS5` + encrypted Blackbox) | Spec/story files (no encrypted transcript vault) | Strong task continuity (no transcript vault) | **No** |
