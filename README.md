@@ -9,7 +9,7 @@
 **A.I.M. (*Actual Intelligent Memory*)** is a self-hosted, open-source software ecosystem for running, supervising, and auditing long-horizon AI coding agents on your own hardware—from any browser or phone—where **every model and every CLI/IDE harness shares the exact same short-term and long-term project memory (`LanceDB` + `memory-wiki/` + `HANDOFF.md`)** with zero SaaS seat fees or vendor lock-in.
 
 > [!IMPORTANT]
-> **Radical Product-Truth Policy (Work in Progress):** This ecosystem is built in the trenches by a working operator to run real daily businesses—not by a VC-funded marketing team. Every repository below carries its **actual build maturity and internal `aim-auditor` grade**. Some tools are battle-tested daily drivers (`aim-connect`, `aim-joshua`), some are active betas or partial phases (`aim-office`, `aim-calendar`), and some are unbuilt architectural specs (`aim-boardroom`, `0` lines of code). Nothing here pretends to be finished when it isn't.
+> **Radical Product-Truth Policy (Work in Progress):** This ecosystem is built in the trenches by a working operator to run real daily businesses—not by a VC-funded marketing team. Every repository below carries its **actual build maturity and internal `aim-auditor` grade**. Some tools are battle-tested daily drivers (`aim-connect`, `aim-joshua`), some are newly shipped utilities (`aim-mailbox`), some are active betas or partial phases (`aim-office`, `aim-calendar`), and retired/unbuilt specs (`aim-boardroom`, `aim-chalkboard`) are explicitly archived below. Nothing here pretends to be finished when it isn't.
 
 ---
 
@@ -37,7 +37,7 @@ flowchart TD
     Harnesses --> Joshua["🧬 aim-joshua (Shared Repo Exoskeleton & SOPs)"]
     Joshua --> ShortTerm["⚡ Shared Short-Term Memory (HANDOFF.md + SQLite FTS5 Sessions)"]
     Joshua --> LongTerm["🧠 Shared Long-Term Memory (Project LanceDB MCP + memory-wiki/)"]
-    Joshua --> Tools["🧰 aim-skill-library · aim-coagents · aim-browser · aim-google · aim-calendar"]
+    Joshua --> Tools["🧰 aim-skill-library · aim-mailbox · aim-coagents · aim-browser · aim-google · aim-calendar"]
 ```
 
 ### 🤖 The Combined Endgame: A Self-Hosted, Model-Agnostic "Grok Bot"
@@ -136,16 +136,15 @@ Every active repository in the stack is grouped below by what job it solves, its
 | **[aim-flight-recorder](https://github.com/BrianV1981/aim-flight-recorder)** | `🟢 Daily Utility` (`v1.0.7`) | Paid LLM log summarizers / token burn | Raw `jq` over multi-MB `.jsonl` caches | Deterministic, zero-token Python extractor turning noisy Antigravity & Grok CLI `.jsonl` transcripts into clean, human-readable Markdown **Flight Records** for audits and post-mortems. |
 | **[aim-knowledge](https://github.com/BrianV1981/aim-knowledge)** | `🟢 Public Vault` | Gated AI newsletters / paid courses | Scattered blog posts | Public Obsidian vault containing `130+` architectural notes, post-mortems (*Scribe Suicide*, *The 30% Rule*, *The Great Convergence*), and RAG 5.21 benchmark proofs. |
 
-### 3. Agent Skills, Specialist DNA, Browser & Workspace Automation
+### 3. Agent Skills, Specialist DNA, Inter-Agent Comms & Automation
 
 | Tool | Real Status | Replaces (Paid SaaS) | Replaces (Existing OSS) | Why Use A.I.M. / Honest Caveat |
 | :--- | :--- | :--- | :--- | :--- |
-| **[aim-skill-library](https://github.com/BrianV1981/aim-skill-library)** | `🟢 Daily Driver` | Vendor-locked IDE plugin stores | Copy-pasted prompt snippets | Cross-platform Python/PowerShell installer (`Base + Vessel Override`) deploying operational procedures (`aim-audit`, `aim-handoff`, `aim-communicate`, `aim-memory-wiki`, `aim-sessions`, `aim-bwrap-forge`, `aim-calc`) across `agy`, `grok`, `opencode`, and `codex`. |
+| **[aim-skill-library](https://github.com/BrianV1981/aim-skill-library)** | `🟢 Daily Driver` | Vendor-locked IDE plugin stores | Copy-pasted prompt snippets | Cross-platform Python/PowerShell installer (`Base + Vessel Override`) deploying operational procedures (`aim-audit`, `aim-handoff`, `aim-communicate` `v2.0`, `aim-memory-wiki`, `aim-sessions`, `aim-bwrap-forge`, `aim-calc`) across `agy`, `grok`, `opencode`, and `codex`. |
+| **[aim-mailbox](https://github.com/BrianV1981/aim-mailbox)** (`aim-mail`) | `🟢 Live Release` (`v0.1.1`, `15/15` Linux + Windows CI; *Baseline audit pending*) | Hosted multi-agent message buses | Heavy daemon/MCP agent mailers (`mcp_agent_mail`, `agent-relay`) & SQLite-only CLIs | Zero-daemon, zero-LLM, pure-Python stdlib (`0` runtime deps) JSON Maildir post office (`os.replace()`, lock-free across Windows 11 NTFS ↔ WSL2 `/mnt/c` `9P`) and `<5ms` wake dispatcher across Antigravity Desktop Sidecars (works minimized), `agy` CLI, OpenCode HTTP, Grok Build, Codex, VS Code `v1.145+`, and `tmux` (`Enter`-only 1-line doorbell), backing `aim-communicate` `v2.0`. |
 | **[aim-coagents](https://github.com/BrianV1981/aim-coagents)** | `🟢 Active DNA Bank` (`1` blueprint local WIP) | Paid specialist AI SaaS seats | CrewAI / AutoGen (token-heavy chat loops) | Reusable Markdown **Personas** (`11` roles) and sovereign specialist **Blueprints** (`aim-auditor`, `python-developer`, `content-node`, `content-wordpress`, `book-coauthor`) that run in isolated workspaces without framework lock-in. |
 | **[aim-browser](https://github.com/BrianV1981/aim-browser)** | `🟡 Functional / Packaging Polish` (`v1.3.1`, Hist. Audit `B−`) | Browserbase / Steel (`$20–$99/mo` cloud browsers) | Heavy Puppeteer / headless Playwright | Zero-Puppeteer Node.js CDP client + loopback-only (`127.0.0.1`) **headed** Chromium daemon and agent skill suite—uses your real local desktop browser fingerprint instead of easily-flagged headless drivers. *(Needs minor root `package.json` / CI polish on next pass.)* |
 | **[aim-google](https://github.com/BrianV1981/aim-google)** | `🟢 Daily Utility` *(Customized `gogcli` Fork)* | Zapier / Make (`$20–$99/mo` Workspace glue) | Heavy OAuth MCP wrappers | Fast, script-friendly Go CLI for Gmail, Drive, Calendar, Docs, Sheets, and YouTube (customized fork of Peter Steinberger's MIT `gogcli` with A.I.M. YouTube & workflow additions). |
-| **[aim-chalkboard](https://github.com/BrianV1981/aim-chalkboard)** | `🧪 Early PoC` *(Superseded Locally)* | Hosted agent message buses | Sync HTTP agent webhooks | Async Git-backed Markdown dropbox PoC for cross-machine agents. Same-host swarms now use `aim-communicate` (`tmux` buffer-paste + mandatory pane capture verification) instead. |
-| **[aim-boardroom](https://github.com/BrianV1981/aim-boardroom)** | `📐 Spec Only — Never Built` (`0` LOC) | — | — | **Unbuilt concept repository** containing only 3 architecture/vision Markdown docs (`VISION_AND_ARCHITECTURE.md`, `INDUSTRY_AUDIT.md`). Real multi-agent fleet control moved into **[aim-connect](https://github.com/BrianV1981/aim-connect)** and **[aim-office](https://github.com/BrianV1981/aim-office)**. |
 
 ---
 
@@ -162,12 +161,14 @@ Every active repository in the stack is grouped below by what job it solves, its
 ---
 
 <details>
-<summary><strong>🪦 Deprecated, Consolidated & Legacy Repositories (13 Historical Repos — Click to Expand)</strong></summary>
+<summary><strong>🪦 Deprecated, Consolidated & Legacy Repositories (15 Historical Repos — Click to Expand)</strong></summary>
 
 <br>
 
-These earlier single-CLI vessels and prototypes were superseded during **The Great Convergence** into **[aim-joshua](https://github.com/BrianV1981/aim-joshua)** and **[aim-skill-library](https://github.com/BrianV1981/aim-skill-library)**. They remain online solely as historical references:
+These earlier single-CLI vessels, concept specs, and prototypes were superseded during **The Great Convergence** into **[aim-joshua](https://github.com/BrianV1981/aim-joshua)**, **[aim-skill-library](https://github.com/BrianV1981/aim-skill-library)**, and **[aim-mailbox](https://github.com/BrianV1981/aim-mailbox)**. They remain online solely as historical references:
 
+- **[aim-chalkboard](https://github.com/BrianV1981/aim-chalkboard)** — Early Git-backed async Markdown dropbox PoC ("The Swarm Post Office"); superseded by **[aim-mailbox](https://github.com/BrianV1981/aim-mailbox)** (`aim-mail` CLI + `aim-communicate` `v2.0`).
+- **[aim-boardroom](https://github.com/BrianV1981/aim-boardroom)** — Unbuilt `0`-LOC 4-pane moderator concept spec (`VISION_AND_ARCHITECTURE.md`, `INDUSTRY_AUDIT.md`); visual fleet supervision moved into **[aim-connect](https://github.com/BrianV1981/aim-connect)** and **[aim-office](https://github.com/BrianV1981/aim-office)**, while cross-harness message routing shipped in **[aim-mailbox](https://github.com/BrianV1981/aim-mailbox)**.
 - **[agy-joshua](https://github.com/BrianV1981/agy-joshua)** *(Archived)* — Legacy Windows 11 PowerShell prototype; merged into `aim-joshua` (`v1.1.0+`).
 - **[aim-agy](https://github.com/BrianV1981/aim-agy)** — Legacy Antigravity CLI vessel; superseded by `aim-joshua`.
 - **[aim-antigravity](https://github.com/BrianV1981/aim-antigravity)** — Earlier Antigravity IDE-line vessel; superseded by `aim-joshua`.
