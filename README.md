@@ -3,8 +3,9 @@
 **Own your stack. Don't rent a seat.**
 
 [![License: MIT](https://img.shields.io/badge/Core_Stack-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Flagship Cockpit: AIM-Connect](https://img.shields.io/badge/%231_Daily_Driver-AIM--Connect_v1.8-00d4ff.svg)](https://github.com/BrianV1981/aim-connect)
-[![Agent Exoskeleton: J.O.S.H.U.A.](https://img.shields.io/badge/Exoskeleton_OS-J.O.S.H.U.A._v1.1.3-10b981.svg)](https://github.com/BrianV1981/aim-joshua)
+[![Flagship Cockpit: AIM-Connect](https://img.shields.io/badge/%231_Daily_Driver-AIM--Connect_v1.8.0-00d4ff.svg)](https://github.com/BrianV1981/aim-connect)
+[![Agent Exoskeleton: J.O.S.H.U.A.](https://img.shields.io/badge/Exoskeleton_OS-J.O.S.H.U.A._v1.1.4-10b981.svg)](https://github.com/BrianV1981/aim-joshua)
+[![Versions Synced](https://img.shields.io/badge/Versions_Synced-2026--11--25-slate.svg)](#-active-ecosystem-tools-honest-status--comparisons)
 
 **A.I.M. (*Actual Intelligent Memory*)** is a self-hosted, open-source software ecosystem for running, supervising, and auditing long-horizon AI coding agents on your own hardware—from any browser or phone—where **every model and every CLI/IDE harness shares the exact same short-term and long-term project memory (`LanceDB` + `memory-wiki/` + `HANDOFF.md`)** with zero SaaS seat fees or vendor lock-in.
 
@@ -60,16 +61,16 @@ When you wire **[aim-connect](https://github.com/BrianV1981/aim-connect)** + **[
 
 ## ⭐ #1 Flagship Daily Driver: [AIM-Connect](https://github.com/BrianV1981/aim-connect)
 
-> **Status:** `🟢 Daily Driver (v1.8.0)` · **Internal Audit:** `Grade A− (160/160 pytest)` · **License:** `MIT` · **Cost:** `$0` (Self-Hosted)
+> **Version:** `v1.8.0` (`master @ a9994e5`) · **Status:** `🟢 Daily Driver` · **Internal Audit:** `Grade A− (Pass 11 @ eff14669, 160/160 pytest)` · **License:** `MIT` · **Cost:** `$0` (Self-Hosted)
 
 If you only look at one repository in this ecosystem, start with **[aim-connect](https://github.com/BrianV1981/aim-connect)**. It is the top-used tool in the stack every single day—turning any desktop or mobile web browser into a sovereign, zero-install command center for your Linux machine and every autonomous CLI agent running inside `tmux`.
 
-### What Works Today (`v1.8.0`)
+### What Works Today (`v1.8.0` + `master @ a9994e5`)
 - **Clientless Browser SSH & Immortal `tmux` Streams:** Close Safari or Chrome on your phone, drive across town, reopen the PWA, and re-attach to the exact live PTY stream—no SSH keys on client devices and no App Store terminal required.
-- **Live AI Fleet Sidebar & Alert Chimes:** Supervise concurrent `Claude`, `Codex`, `OpenCode`, `Grok`, and `Antigravity` sessions with live state detection (`THINKING`, `✋ Waiting` input chimes, `ERROR`, `IDLE`), `Cmd+K` teleportation, and a secret-redacting scrollback **Token Grabber**.
+- **Live AI Fleet Sidebar & Alert Chimes:** Supervise concurrent `Claude`, `Codex`, `OpenCode`, `Grok`, and `Antigravity` sessions with live state detection (`THINKING`, `✋ Waiting` input chimes, `ERROR`, `IDLE`), `Cmd+K` teleportation, a secret-redacting scrollback **Token Grabber**, and a live-modeled [12-node / 40-session interactive browser showcase](https://brianv1981.github.io/aim-connect/).
 - **Split-Pane Monaco Web IDE, Diff Viewer, & Cross-Fleet Forensics:** Browse files, edit code with `HTTP 409` `mtime` conflict protection, inspect side-by-side Git diffs without unmounting your live terminal, and run instant SQLite `FTS5` searches across structured agent transcripts.
-- **Hands-Free `🔊` Neural TTS & Sovereign Mobile Input:** Listen to plain-English spoken agent summaries while away from your desk (`piper-tts` offline ONNX or Edge Neural voices) and type effortlessly on phones using a custom developer keybar (`Tab`, `Esc`, sticky `Ctrl`, pipes) plus programmable voice macros.
-- **Zero-Trust 3FA, Passkeys, Client-Side E2EE, & `bwrap` Gateway:** Protected by Stealth Passphrase + Password + TOTP, FIDO2 WebAuthn (**FaceID / TouchID / YubiKey**), optional browser-side `AES-256-GCM` WebSocket encryption, and a multi-tenant Bubblewrap (`bwrap`) sandbox gateway mode.
+- **Hands-Free `🔊` Neural TTS & Sovereign Mobile Input:** Listen to plain-English spoken agent summaries while away from your desk (`piper-tts` offline ONNX or Edge Neural voices) and type effortlessly on phones using a custom developer keybar (`Tab`, `Esc`, sticky `Ctrl`, multi-row composer, OS-keyboard suppression when keybar is active) plus programmable voice macros.
+- **Zero-Trust 3FA, Passkeys, Client-Side E2EE, & `bwrap` Gateway:** Protected by Stealth Passphrase + Password + TOTP, FIDO2 WebAuthn (**FaceID / TouchID / YubiKey**), per-JWT browser-side `AES-256-GCM` WebSocket encryption, loopback sandbox email relay, and a multi-tenant Bubblewrap (`bwrap`) gateway mode.
 
 > [!NOTE]
 > **🚧 Active Roadmap (Coming Next to `aim-connect`):** Deeper **Fleet Control** orchestration menus (batch dispatch, lifecycle controls, and multi-agent routing) and richer **Visual Context-Bloat Menus** so you can spot token burn, session saturation, and 30%-Rule handoff thresholds across every running agent at a glance before quality degrades.
@@ -89,7 +90,7 @@ If you only look at one repository in this ecosystem, start with **[aim-connect]
 
 ## 🧬 Core Exoskeleton: [J.O.S.H.U.A. (`aim-joshua`)](https://github.com/BrianV1981/aim-joshua)
 
-> **Status:** `🟢 Production (v1.1.3 — Deployed Across 21/21 Local Workspaces)` · **Internal Audit:** `Grade A+ (66/66 pytest, Linux + Windows CI)` · **License:** `MIT`
+> **Version:** `v1.1.4` (`main @ b2a431b`) · **Status:** `🟢 Production (Deployed Across 21/21 Local Workspaces)` · **Internal Audit:** `Grade A+ (Pass 14 @ v1.1.3; v1.1.4 71/71 pytest, Linux + Windows CI)` · **License:** `MIT`
 
 **[aim-joshua](https://github.com/BrianV1981/aim-joshua)** (*Joint Operational Systems for Heuristic User Automation*) is a lightweight, repo-level **agentic exoskeleton** (`joshua_os/` + `./aim` + `AGENTS.md` — automatically `.gitignore`-shielded so it never pollutes your project's commits).
 
@@ -117,46 +118,47 @@ If you only look at one repository in this ecosystem, start with **[aim-connect]
 
 ## 🛠️ Active Ecosystem Tools: Honest Status & Comparisons
 
-Every active repository in the stack is grouped below by what job it solves, its **real completion state**, and how it compares to paid SaaS and existing open-source tools.
+Every active repository in the stack is grouped below with its **verified version / git pin** (last synced `2026-11-25` so version drift is immediately obvious), **real completion state**, and comparison to paid SaaS and existing open-source tools.
 
 ### 1. Fleet Cockpits, Schedulers & Visualizers
 
-| Tool | Real Status | Replaces (Paid SaaS) | Replaces (Existing OSS) | Why Use A.I.M. / Honest Caveat |
-| :--- | :--- | :--- | :--- | :--- |
-| **[aim-tmux-dashboard](https://github.com/BrianV1981/aim-tmux-dashboard)** (`aim-dash`) | `🟢 Daily Driver` (`v1.0.0`) | Warp Teams (`$15–$40/mo`) | `tmux choose-tree`, `tmuxinator` | Instant Python Textual TUI inside SSH/terminal with live ANSI pane previews, AI agent badges across windows, Spotlight git-repo launcher, and zero-friction session resume. |
-| **[aim-cron-dashboard](https://github.com/BrianV1981/aim-cron-dashboard)** (`aim-cron`) | `🟢 Daily Driver` (`v0.2.0`) | Cronitor / Healthchecks (`$20+/mo`) | Raw `crontab -e`, Crontab UI | Translates 5-field crons to plain English, pauses/edits/force-runs jobs safely with automatic crontab backups, and tails scheduled agent logs in one terminal TUI. |
-| **[aim-office](https://github.com/BrianV1981/aim-office)** | `🟡 Beta / WIP` (`v1.0.0`, Audit `C+`) | LangSmith / AgentOps (`$39–$99/mo` cloud telemetry) | Pixel Agents (VS Code-only extension) | Renders up to 32 live `tmux` agents across 4 isometric 2.5D pixel-art rooms (`80` directional sprites) with 30%-Rule amnesia HUD bars. **Unfinished:** Live Inspector Drawer forensics, Kanban routing, and Vite proxy hardening (`#23`–`#29`) are still in progress. |
+| Tool | Version | Real Status | Replaces (Paid SaaS) | Replaces (Existing OSS) | Why Use A.I.M. / Honest Caveat |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **[aim-tmux-dashboard](https://github.com/BrianV1981/aim-tmux-dashboard)** (`aim-dash`) | `v1.0.0` (`master @ 3fda94b`) | `🟢 Daily Driver` *(Hist. Audit `B−`)* | Warp Teams (`$15–$40/mo`) | `tmux choose-tree`, `tmuxinator` | Instant Python Textual TUI inside SSH/terminal with live ANSI pane previews, AI agent badges across windows, Spotlight git-repo launcher, and zero-friction session resume. |
+| **[aim-cron-dashboard](https://github.com/BrianV1981/aim-cron-dashboard)** (`aim-cron`) | `v0.2.0` (`main @ b31406d`) | `🟢 Daily Driver` *(Unaudited)* | Cronitor / Healthchecks (`$20+/mo`) | Raw `crontab -e`, Crontab UI | Translates 5-field crons to plain English, pauses/edits/force-runs jobs safely with automatic crontab backups, and tails scheduled agent logs in one terminal TUI. |
+| **[aim-office](https://github.com/BrianV1981/aim-office)** | `v1.0.0` (`main @ bffcc83`) | `🟡 Beta / WIP` *(Audit `C+`)* | LangSmith / AgentOps (`$39–$99/mo` cloud telemetry) | Pixel Agents (VS Code-only extension) | Renders up to 32 live `tmux` agents across 4 isometric 2.5D pixel-art rooms (`80` directional sprites) with 30%-Rule amnesia HUD bars. **Unfinished:** Vite proxy hardening, live Inspector Drawer forensics, Kanban routing, and CI (`#23`–`#30`) are still in progress. |
 
 ### 2. Memory, Transcripts & Personal Exocortex
 
-| Tool | Real Status | Replaces (Paid SaaS) | Replaces (Existing OSS) | Why Use A.I.M. / Honest Caveat |
-| :--- | :--- | :--- | :--- | :--- |
-| **[aim-memory](https://github.com/BrianV1981/aim-memory)** | `🟢 Stable Library` (`RAG 5.21`) | Mem0 Pro / Zep Cloud (`$19–$249/mo`) | Basic Chroma / naive vector RAG | Standalone Python `MemoryClient` combining LanceDB vectors + Tantivy BM25 FTS + entity-aware reranking (**95.6% Recall@5** on LongMemEval) on local `.parquet` files with `$0` cloud vector hosting. |
-| **[aim-calendar](https://github.com/BrianV1981/aim-calendar)** | `🟡 WIP — Phase 1 Live` (`v1.2.0`, Phase 1 Audit `A`) | Limitless / Rewind AI (`$19–$29/mo` cloud lifelog) | Manual XML scripts + scattered notes | Local-first communications exocortex (`32/32` tests): syncs Android SMS/MMS XML backups + call recordings via `rclone`, interleaves diarized call transcripts into Obsidian Daily Notes, indexes into LanceDB, and auto-prunes `190+ GB` of superseded XMLs. **Unfinished:** Phase 2 MMS vision/translation (`#13`) and Phase 3 Gemini + Google Calendar sync (`#14`) are not built yet. |
-| **[aim-flight-recorder](https://github.com/BrianV1981/aim-flight-recorder)** | `🟢 Daily Utility` (`v1.0.7`) | Paid LLM log summarizers / token burn | Raw `jq` over multi-MB `.jsonl` caches | Deterministic, zero-token Python extractor turning noisy Antigravity & Grok CLI `.jsonl` transcripts into clean, human-readable Markdown **Flight Records** for audits and post-mortems. |
-| **[aim-knowledge](https://github.com/BrianV1981/aim-knowledge)** | `🟢 Public Vault` | Gated AI newsletters / paid courses | Scattered blog posts | Public Obsidian vault containing `130+` architectural notes, post-mortems (*Scribe Suicide*, *The 30% Rule*, *The Great Convergence*), and RAG 5.21 benchmark proofs. |
+| Tool | Version | Real Status | Replaces (Paid SaaS) | Replaces (Existing OSS) | Why Use A.I.M. / Honest Caveat |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **[aim-memory](https://github.com/BrianV1981/aim-memory)** | `v1.0.0` (`RAG 5.21`, `main @ 8df4d52`) | `🟢 Stable Library` *(Unaudited)* | Mem0 Pro / Zep Cloud (`$19–$249/mo`) | Basic Chroma / naive vector RAG | Standalone Python `MemoryClient` combining LanceDB vectors + Tantivy BM25 FTS + entity-aware reranking (**95.6% Recall@5** on LongMemEval) on local `.parquet` files with `$0` cloud vector hosting. |
+| **[aim-calendar](https://github.com/BrianV1981/aim-calendar)** | `v1.2.0` (`main @ 95c4d0f`) | `🟡 WIP — Phase 1 Live` *(Audit `A`)* | Limitless / Rewind AI (`$19–$29/mo` cloud lifelog) | Manual XML scripts + scattered notes | Local-first communications exocortex (`32/32` tests): syncs Android SMS/MMS XML backups + call recordings via `rclone`, interleaves diarized call transcripts into Obsidian Daily Notes, indexes into LanceDB, and auto-prunes `190+ GB` of superseded XMLs. **Unfinished:** Phase 2 MMS vision/translation (`#13`) and Phase 3 Gemini + Google Calendar sync (`#14`) are not built yet. |
+| **[aim-flight-recorder](https://github.com/BrianV1981/aim-flight-recorder)** | `v1.0.7` (`master @ 5a8f3f6`) | `🟢 Daily Utility` *(Unaudited)* | Paid LLM log summarizers / token burn | Raw `jq` over multi-MB `.jsonl` caches | Deterministic, zero-token Python extractor turning noisy Antigravity & Grok CLI `.jsonl` transcripts into clean, human-readable Markdown **Flight Records** for audits and post-mortems. |
+| **[aim-knowledge](https://github.com/BrianV1981/aim-knowledge)** | `Unversioned` (`master @ 605b9f0` / `main @ e6abdb7`) | `🟢 Public Vault` *(Unaudited)* | Gated AI newsletters / paid courses | Scattered blog posts | Public Obsidian vault containing `123` tracked Markdown notes, architectural post-mortems (*Scribe Suicide*, *The 30% Rule*, *The Great Convergence*), and RAG 5.21 benchmark proofs. |
 
 ### 3. Agent Skills, Specialist DNA, Inter-Agent Comms & Automation
 
-| Tool | Real Status | Replaces (Paid SaaS) | Replaces (Existing OSS) | Why Use A.I.M. / Honest Caveat |
-| :--- | :--- | :--- | :--- | :--- |
-| **[aim-skill-library](https://github.com/BrianV1981/aim-skill-library)** | `🟢 Daily Driver` | Vendor-locked IDE plugin stores | Copy-pasted prompt snippets | Cross-platform Python/PowerShell installer (`Base + Vessel Override`) deploying operational procedures (`aim-audit`, `aim-handoff`, `aim-communicate` `v2.0`, `aim-memory-wiki`, `aim-sessions`, `aim-bwrap-forge`, `aim-calc`) across `agy`, `grok`, `opencode`, and `codex`. |
-| **[aim-mailbox](https://github.com/BrianV1981/aim-mailbox)** (`aim-mail`) | `🟢 Live Release` (`v0.1.1`, `15/15` Linux + Windows CI; *Baseline audit pending*) | Hosted multi-agent message buses | Heavy daemon/MCP agent mailers (`mcp_agent_mail`, `agent-relay`) & SQLite-only CLIs | Zero-daemon, zero-LLM, pure-Python stdlib (`0` runtime deps) JSON Maildir post office (`os.replace()`, lock-free across Windows 11 NTFS ↔ WSL2 `/mnt/c` `9P`) and `<5ms` wake dispatcher across Antigravity Desktop Sidecars (works minimized), `agy` CLI, OpenCode HTTP, Grok Build, Codex, VS Code `v1.145+`, and `tmux` (`Enter`-only 1-line doorbell), backing `aim-communicate` `v2.0`. |
-| **[aim-coagents](https://github.com/BrianV1981/aim-coagents)** | `🟢 Active DNA Bank` (`1` blueprint local WIP) | Paid specialist AI SaaS seats | CrewAI / AutoGen (token-heavy chat loops) | Reusable Markdown **Personas** (`11` roles) and sovereign specialist **Blueprints** (`aim-auditor`, `python-developer`, `content-node`, `content-wordpress`, `book-coauthor`) that run in isolated workspaces without framework lock-in. |
-| **[aim-browser](https://github.com/BrianV1981/aim-browser)** | `🟡 Functional / Packaging Polish` (`v1.3.1`, Hist. Audit `B−`) | Browserbase / Steel (`$20–$99/mo` cloud browsers) | Heavy Puppeteer / headless Playwright | Zero-Puppeteer Node.js CDP client + loopback-only (`127.0.0.1`) **headed** Chromium daemon and agent skill suite—uses your real local desktop browser fingerprint instead of easily-flagged headless drivers. *(Needs minor root `package.json` / CI polish on next pass.)* |
-| **[aim-google](https://github.com/BrianV1981/aim-google)** | `🟢 Daily Utility` *(Customized `gogcli` Fork)* | Zapier / Make (`$20–$99/mo` Workspace glue) | Heavy OAuth MCP wrappers | Fast, script-friendly Go CLI for Gmail, Drive, Calendar, Docs, Sheets, and YouTube (customized fork of Peter Steinberger's MIT `gogcli` with A.I.M. YouTube & workflow additions). |
+| Tool | Version | Real Status | Replaces (Paid SaaS) | Replaces (Existing OSS) | Why Use A.I.M. / Honest Caveat |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **[aim-skill-library](https://github.com/BrianV1981/aim-skill-library)** | `Unversioned` (`main @ cbe08f2`; `aim-communicate v2.0`) | `🟢 Daily Driver` *(Partial Audit `A+` on `communicate`)* | Vendor-locked IDE plugin stores | Copy-pasted prompt snippets | Cross-platform Python/PowerShell installer (`Base + Vessel Override`) deploying `14` tracked operational skills (`aim-audit`, `aim-handoff`, `aim-communicate v2.0`, `aim-memory-wiki`, `aim-sessions`, `aim-bwrap-forge`, `aim-calc`, etc.) across `agy`, `grok`, `opencode`, and `codex` (`18/18` `unittest`, Linux + Windows CI & `gitleaks` green). |
+| **[aim-mailbox](https://github.com/BrianV1981/aim-mailbox)** (`aim-mail`) | `v0.2.0` (`main @ 73b09e9`) | `🟢 Live Release` *(`v0.1.2` Audit `A+`; `36/36` pytest)* | Hosted multi-agent message buses | Heavy daemon/MCP agent mailers (`mcp_agent_mail`, `agent-relay`) & SQLite-only CLIs | Zero-daemon, zero-LLM, pure-Python stdlib (`0` runtime deps) JSON Maildir post office (`os.replace()`, lock-free across Windows 11 NTFS ↔ WSL2 `/mnt/c` `9P`), `<5ms` wake dispatcher across `agy`, OpenCode HTTP, Grok, Codex, VS Code, & `tmux` (`Enter`-only), plus `v0.2.0` `install-hooks` (`<15ms` fast-path), `priority`/`--coalesce-key` lanes, `inbox` filters & `gc`. |
+| **[aim-coagents](https://github.com/BrianV1981/aim-coagents)** | `Unversioned` (`main @ a08e3ad`) | `🟢 Active DNA Bank` *(Unaudited)* | Paid specialist AI SaaS seats | CrewAI / AutoGen (token-heavy chat loops) | Reusable Markdown **Personas** (`10` tracked roles) and sovereign specialist **Blueprints** (`6` tracked blueprints incl. `aim-auditor`, `python-developer`, `content-node`, `content-wordpress`, `book-coauthor`) that run in isolated workspaces without framework lock-in. |
+| **[aim-browser](https://github.com/BrianV1981/aim-browser)** | `v1.3.1` (`master @ 03f2759`) | `🟢 Functional / Active` *(Hist. Audit `B−` @ `9ac967c`)* | Browserbase / Steel (`$20–$99/mo` cloud browsers) | Heavy Puppeteer / headless Playwright | Zero-Puppeteer Node.js CDP client + loopback (`127.0.0.1`) **headed/headless** Chromium daemon (`#11`–`#15` on `master`: cross-platform Windows 11/Linux Node daemon, multi-tab `--tab` leasing, zero-VLM self-healing site maps, `--snapshot --json` telemetry, & `--request-human`). |
+| **[aim-google](https://github.com/BrianV1981/aim-google)** | `v0.13.0-dev` (`main @ 158bd69`) | `🟢 Daily Utility` *(Customized `gogcli` `0.13.0` Fork)* | Zapier / Make (`$20–$99/mo` Workspace glue) | Heavy OAuth MCP wrappers | Fast, script-friendly Go CLI for Gmail, Drive, Calendar, Docs, Sheets, and YouTube (customized fork of Peter Steinberger's MIT `gogcli` with A.I.M. YouTube & workflow additions). |
 
 ---
 
 ## 📊 Benchmarks & Standalone Open-Source Utilities
 
-- **Memory & Debugging Benchmarks:**
-  - **[locomo-v2](https://github.com/BrianV1981/locomo-v2)** — Community-corrected, 100% solvable edition of the LoCoMo long-term conversational memory benchmark (fixes 99 ground-truth hallucinations and 82 dead image links).
-  - **[locomo-visual-ground-truth](https://github.com/BrianV1981/locomo-visual-ground-truth)** — Visual ground-truth dataset and OCR cache for LoCoMo.
-  - **[aim-aerospace-benchmark](https://github.com/BrianV1981/aim-aerospace-benchmark)** & **[aim-benchmark-oracle](https://github.com/BrianV1981/aim-benchmark-oracle)** — Empirical debugging benchmark sandboxes.
-- **Standalone Non-A.I.M. Utilities (`GPL-3.0`):**
-  - **[Ad-Free-SMS-Backup-Restore](https://github.com/BrianV1981/Ad-Free-SMS-Backup-Restore)** — Clean Android SMS/MMS backup utility (`GPL-3.0`).
-  - **[opensitebackup](https://github.com/BrianV1981/opensitebackup)** — Self-hosted website backup and restore pipeline (`GPL-3.0`).
+| Project | Version | License | Category | Purpose |
+| :--- | :--- | :--- | :--- | :--- |
+| **[locomo-v2](https://github.com/BrianV1981/locomo-v2)** | `v2.1.0-stable` (`main @ 63d8fe0`) | `CC-BY-NC-4.0` | Benchmark | Community-corrected, 100% solvable edition of the LoCoMo long-term conversational memory benchmark (fixes 99 ground-truth hallucinations and 82 dead image links). |
+| **[locomo-visual-ground-truth](https://github.com/BrianV1981/locomo-visual-ground-truth)** | `Unversioned` (`main @ b69baf6`) | Dataset | Benchmark | Visual ground-truth dataset (`774` images) and multi-model OCR translation cache for LoCoMo. |
+| **[aim-aerospace-benchmark](https://github.com/BrianV1981/aim-aerospace-benchmark)** | `v1.53.0` (`main @ 7b7c3fa`) | `MIT` | Benchmark | Empirical aerospace orbital-mechanics debugging benchmark sandbox. |
+| **[aim-benchmark-oracle](https://github.com/BrianV1981/aim-benchmark-oracle)** | `Unversioned` (`main @ 2d2fea8`) | `MIT` | Benchmark | Orbital Delta-V ($\Delta v$) reference calculator and oracle test suite. |
+| **[Ad-Free-SMS-Backup-Restore](https://github.com/BrianV1981/Ad-Free-SMS-Backup-Restore)** | `v1.0` (`master @ c5eb5b1`) | `GPL-3.0` | Utility | Clean, ad-free native Android (Kotlin + Jetpack Compose) SMS/MMS backup and restore utility. |
+| **[opensitebackup](https://github.com/BrianV1981/opensitebackup)** | `v0.1.0-alpha.2` (`main @ a06d394`) | `GPL-3.0` | Utility | Self-hosted website backup and verified restore-drill pipeline (`GPL-3.0` going forward; `v0.1.0-alpha.*` tags `MIT`). |
 
 ---
 
